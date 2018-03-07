@@ -1,8 +1,10 @@
 package com.zhongsm.android;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 /**
  * TODO
@@ -19,11 +21,11 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 获取页面Content布局文件ID
      * @return setContentView(int) 待置入页面的 layoutID
      */
-    abstract int loadContentLayoutID();
+    protected abstract int loadContentLayoutID();
 
-    abstract void initViews();
+    protected abstract void initViews();
 
-    abstract void xx();
+    protected abstract void loadViewData();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
 
         initViews();
-        xx();
+        loadViewData();
     }
 
     @Override
@@ -43,5 +45,23 @@ public abstract class BaseActivity extends AppCompatActivity {
         TAG = getClass().getSimpleName();
     }
 
+    private Toast toast;
 
+    private void toast(String toastMsg, int duration) {
+        if (toast != null) {
+            toast.setText(toastMsg);
+            toast.setDuration(duration);
+        } else {
+            toast = Toast.makeText(this, toastMsg, duration);
+        }
+        toast.show();
+    }
+
+    protected void toastShort(@NonNull String toastMsg) {
+        toast(toastMsg, Toast.LENGTH_SHORT);
+    }
+
+    protected void toastLong(@NonNull String toastMsg) {
+        toast(toastMsg, Toast.LENGTH_LONG);
+    }
 }

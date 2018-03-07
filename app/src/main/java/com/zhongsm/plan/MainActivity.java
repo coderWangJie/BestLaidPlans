@@ -1,14 +1,21 @@
 package com.zhongsm.plan;
 
-import android.os.Bundle;
-
 import com.zhongsm.android.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int loadContentLayoutID() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initViews() {
+        toastShort("柴狗熊");
+    }
+
+    @Override
+    protected void loadViewData() {
+
     }
 }

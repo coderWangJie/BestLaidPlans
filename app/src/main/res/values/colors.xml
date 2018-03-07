@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Theme设置使用的颜色，只需要在更改主题颜色时编辑此处 -->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- 以下是自定义的颜色值 -->
+    <color name="text">#FF6600</color>
 </resources>
