@@ -1,6 +1,8 @@
-package com.zhongsm.plan;
+package com.zhongsm.plan.android;
 
 import com.zhongsm.android.BaseActivity;
+import com.zhongsm.plan.R;
+import com.zhongsm.util.LogUtil;
 
 public class MainActivity extends BaseActivity {
 
@@ -16,6 +18,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void loadViewData() {
+        toastLong("哈哈");
 
+        LogUtil.v("A", "A");
+        LogUtil.d("A", "A");
+        LogUtil.i("A", "A");
+        LogUtil.w("A", "A");
+        LogUtil.e("A", "A");
     }
 }

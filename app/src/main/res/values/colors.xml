@@ -6,5 +6,23 @@
     <color name="colorAccent">#FF4081</color>
 
     <!-- 以下是自定义的颜色值 -->
-    <color name="text">#FF6600</color>
+    <color name="transparent">#00000000</color><!-- 透明 -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="semitransparent">#80000000</color><!-- 半透明 -->
+    <color name="red">#FF0000</color>
+    <color name="shanhu">#FF7F50</color><!-- 珊瑚色 -->
+    <color name="tomato_red">#FF6347</color><!-- 番茄红 -->
+    <color name="yellow">#FFFF00</color>
+    <color name="golden_yellow">#FFD700</color><!-- 金黄色 -->
+    <color name="carrot">#ED9121</color><!-- 胡萝卜色 -->
+    <color name="cool_grey">#808A87</color><!-- 冷灰色 -->
+    <color name="blue">#0000FF</color>
+    <color name="peacock_blue">#33A1C9</color><!-- 孔雀蓝 -->
+    <color name="purple">#A020F0</color>
+    <color name="green">#00FF00</color>
+
+
+    <color name="sample">#123456</color><!--  -->
+
 </resources>
