@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:orientation="vertical"
+    tools:context=".android.HomeActivity">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:clipChildren="false"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_frag1"
+            style="@style/home_radio_button"
+            android:drawableTop="@drawable/checker_home_radio_one"
+            android:text="新" />
+
+        <RadioButton
+            android:id="@+id/radio_frag2"
+            style="@style/home_radio_button"
+            android:drawableTop="@drawable/checker_home_radio_two"
+            android:text="年" />
+
+        <RadioButton
+            android:id="@+id/radio_frag3"
+            style="@style/home_radio_button"
+            android:layout_height="65dp"
+            android:background="@drawable/icon_scan" />
+
+        <RadioButton
+            android:id="@+id/radio_frag4"
+            style="@style/home_radio_button"
+            android:drawableTop="@drawable/checker_home_radio_four"
+            android:text="快" />
+
+        <RadioButton
+            android:id="@+id/radio_frag5"
+            style="@style/home_radio_button"
+            android:drawableTop="@drawable/checker_home_radio_five"
+            android:text="乐" />
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/frame_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/radioGroup" />
+
+</RelativeLayout>
