@@ -31,10 +31,7 @@ public class DashedView extends View {
 
     private Paint paint;
 
-    private float startX;
-    private float startY;
-    private float endX;
-    private float endY;
+    private float[] pts;
 
     public DashedView(Context context) {
         super(context);
@@ -81,6 +78,11 @@ public class DashedView extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
+        float startX = 0;
+        float startY = 0;
+        float endX = 0;
+        float endY = 0;
+
         switch (direction) {
             case 0:
                 // 水平虚线
@@ -114,13 +116,14 @@ public class DashedView extends View {
                 endY = getHeight() - getPaddingBottom();
                 break;
         }
+
+        pts = new float[]{startX, startY, endX, endY};
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        float[] pts = new float[]{startX, startY, endX, endY};
         canvas.drawLines(pts, paint);
     }
 }
