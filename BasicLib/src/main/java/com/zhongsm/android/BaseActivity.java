@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 /**
@@ -30,6 +31,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e("LogWangJ", "activity****onCreate");
 
         if (loadContentLayoutID() > 0) {
             setContentView(loadContentLayoutID());
@@ -43,6 +45,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         TAG = getClass().getSimpleName();
+        Log.e("LogWangJ", "activity****onResume");
     }
 
     private Toast toast;
@@ -63,5 +66,36 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected void toastLong(@NonNull String toastMsg) {
         toast(toastMsg, Toast.LENGTH_LONG);
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("LogWangJ", "activity****onStart");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("LogWangJ", "activity****onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("LogWangJ", "activity****onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("LogWangJ", "activity****onDestroy");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e("LogWangJ", "activity****onRestart");
     }
 }

@@ -3,14 +3,14 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item><!-- 标题栏背景色 -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item><!-- 状态栏背景色 -->
+        <item name="colorAccent">@color/colorAccent</item><!-- 控件选中颜色 -->
         <!-- 避免按钮上显示的英文字母强制转大写 -->
         <item name="android:textAllCaps">false</item>
     </style>
 
-
+    <!-- 主页底部仿Tab栏的RadioButton样式 -->
     <style name="home_radio_button">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
@@ -18,27 +18,18 @@
         <item name="android:button">@null</item>
         <item name="android:padding">5dp</item>
         <item name="android:gravity">center_horizontal|bottom</item>
-        <item name="android:textSize">12dp</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
-    <!--<style name="home_radio_button">
-        <item name="android:layout_marginTop">12dp</item>
-        <item name="android:paddingTop">3dp</item>
-        &lt;!&ndash; 内部组件的排列 &ndash;&gt;
-        <item name="android:gravity">center_horizontal|bottom</item>
-        &lt;!&ndash; 背景 &ndash;&gt;
-        &lt;!&ndash; <item name="android:background">@drawable/main_tab_background_selector</item> &ndash;&gt;
-        <item name="android:background">@null</item>
-        &lt;!&ndash; 宽度 &ndash;&gt;
-        <item name="android:layout_width">match_parent</item>
-        &lt;!&ndash; 高度 &ndash;&gt;
-        <item name="android:layout_height">45dp</item>
-        &lt;!&ndash; 设置RadioButton的原来图片为空 &ndash;&gt;
-        <item name="android:button">@null</item>
-        &lt;!&ndash; 权重 &ndash;&gt;
-        <item name="android:layout_weight">1</item>
-        &lt;!&ndash; 文字的大小 &ndash;&gt;
-        <item name="android:textSize">12dp</item>
-    </style>-->
+    <!--  -->
+    <style name="xx">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!--  -->
+
+    <!--  -->
+
+    <!--  -->
 
 </resources>
