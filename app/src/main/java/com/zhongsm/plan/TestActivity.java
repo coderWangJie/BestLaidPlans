@@ -6,7 +6,7 @@ public class TestActivity extends BaseActivity {
 
     @Override
     protected int loadContentLayoutID() {
-        return R.layout.activity_test;
+        return R.layout.login;
     }
 
     @Override

@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.RadioGroup;
 
 import com.zhongsm.android.BaseActivity;
@@ -32,57 +31,7 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                switch (i) {
-                    case R.id.radio_frag1:
-//                        fragmentTransaction.show(advancesFragment);
-//
-//                        fragmentTransaction.hide(test2Fragment);
-//                        fragmentTransaction.hide(test3Fragment);
-//                        fragmentTransaction.hide(personalFragment);
-                        switchShowedFragment(0, advancesFragment);
-                        break;
-
-                    case R.id.radio_frag2:
-//                        fragmentTransaction.show(test2Fragment);
-//
-//                        fragmentTransaction.hide(advancesFragment);
-//                        fragmentTransaction.hide(test3Fragment);
-//                        fragmentTransaction.hide(personalFragment);
-                        switchShowedFragment(0, test2Fragment);
-                        break;
-
-                    case R.id.radio_frag4:
-//                        fragmentTransaction.show(test3Fragment);
-//
-//                        fragmentTransaction.hide(advancesFragment);
-//                        fragmentTransaction.hide(test2Fragment);
-//                        fragmentTransaction.hide(personalFragment);
-                        switchShowedFragment(0, test3Fragment);
-                        break;
-
-                    case R.id.radio_frag5:
-//                        fragmentTransaction.show(personalFragment);
-//
-//                        fragmentTransaction.hide(advancesFragment);
-//                        fragmentTransaction.hide(test2Fragment);
-//                        fragmentTransaction.hide(test3Fragment);
-
-                        switchShowedFragment(0, personalFragment);
-                        break;
-                }
-                fragmentTransaction.commit();
-            }
-        });
-
-
         fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         advancesFragment = new AdvancesFragment();
         test2Fragment = new Test2Fragment();
@@ -91,13 +40,36 @@ public class HomeActivity extends BaseActivity {
 
         currentFragment = advancesFragment;
 
-        fragmentTransaction.add(R.id.frame_container, advancesFragment, "Fragment1");
-//        fragmentTransaction.add(R.id.frame_container, test2Fragment, "Fragment2");
-//        fragmentTransaction.add(R.id.frame_container, test3Fragment, "Fragment3");
-//        fragmentTransaction.add(R.id.frame_container, personalFragment, "Fragment4");
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
-//        fragmentTransaction.addToBackStack("FragmentTransaction");
-        fragmentTransaction.commit();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                switch (i) {
+                    case R.id.radio_frag1:
+                        switchShowedFragment(R.id.frame_container, advancesFragment);
+                        break;
+
+                    case R.id.radio_frag2:
+                        switchShowedFragment(R.id.frame_container, test2Fragment);
+                        break;
+
+                    case R.id.radio_frag3:
+                        switchShowedFragment(R.id.frame_container, test2Fragment);
+                        break;
+
+                    case R.id.radio_frag4:
+                        switchShowedFragment(R.id.frame_container, test3Fragment);
+                        break;
+
+                    case R.id.radio_frag5:
+                        switchShowedFragment(R.id.frame_container, personalFragment);
+                        break;
+                }
+                fragmentTransaction.commit();
+            }
+        });
     }
 
     @Override
@@ -115,11 +87,9 @@ public class HomeActivity extends BaseActivity {
             transaction.show(fragment);
         } else {
             transaction.hide(currentFragment);
-            transaction.add(R.id.frame_container, fragment, "");
+            transaction.add(containerId, fragment, fragment.getClass().getSimpleName());
         }
 
-        Log.e("LogWangJ", fragment.getClass().getSimpleName());
-        
         transaction.commit();
         currentFragment = fragment;
     }

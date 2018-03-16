@@ -26,6 +26,7 @@
             android:id="@+id/radio_frag1"
             style="@style/home_radio_button"
             android:drawableTop="@drawable/checker_home_radio_one"
+            android:checked="true"
             android:text="新" />
 
         <RadioButton
