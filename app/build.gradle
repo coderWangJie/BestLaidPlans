@@ -22,9 +22,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(path: ':BasicLib')
-    // retrofit网络框架
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.android.support:design:25.3.1'
 }

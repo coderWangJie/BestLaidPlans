@@ -3,7 +3,13 @@
 
     <string name="login_login">登录</string>
     <string name="login_register">还没有账号？去注册</string>
-    <string name="login_reset_pwd">忘记密码？</string>
+    <string name="login_reset_pwd">忘记密码？立即找回</string>
+
+    <!-- 首页标签页显示名称 -->
+    <string name="home_radio_index">1</string>
+    <string name="home_radio_">2</string>
+    <string name="home_radio_history">历史</string>
+    <string name="home_radio_my">我的</string>
 
 
 </resources>

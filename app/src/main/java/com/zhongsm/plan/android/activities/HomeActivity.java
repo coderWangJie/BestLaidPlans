@@ -1,4 +1,4 @@
-package com.zhongsm.plan.android;
+package com.zhongsm.plan.android.activities;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -25,12 +25,12 @@ public class HomeActivity extends BaseActivity {
     private Fragment currentFragment;
 
     @Override
-    protected int loadContentLayoutID() {
+    protected int getContentLayoutId() {
         return R.layout.activity_home;
     }
 
     @Override
-    protected void initViews() {
+    protected void doingOnCreat() {
         fragmentManager = getFragmentManager();
 
         advancesFragment = new AdvancesFragment();
@@ -56,7 +56,7 @@ public class HomeActivity extends BaseActivity {
                         break;
 
                     case R.id.radio_frag3:
-                        switchShowedFragment(R.id.frame_container, test2Fragment);
+//                        switchShowedFragment(R.id.frame_container, test2Fragment);
                         break;
 
                     case R.id.radio_frag4:
@@ -73,7 +73,7 @@ public class HomeActivity extends BaseActivity {
     }
 
     @Override
-    protected void loadViewData() {
+    protected void doingOnResume() {
     }
 
     private void switchShowedFragment(int containerId, Fragment fragment) {

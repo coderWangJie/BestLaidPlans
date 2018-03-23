@@ -5,17 +5,17 @@ import com.zhongsm.android.BaseActivity;
 public class TestActivity extends BaseActivity {
 
     @Override
-    protected int loadContentLayoutID() {
-        return R.layout.login;
+    protected int getContentLayoutId() {
+        return R.layout.activity_test;
     }
 
     @Override
-    protected void initViews() {
+    protected void doingOnCreat() {
 
     }
 
     @Override
-    protected void loadViewData() {
+    protected void doingOnResume() {
 
     }
 

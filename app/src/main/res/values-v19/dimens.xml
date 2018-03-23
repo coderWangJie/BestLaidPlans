@@ -1,0 +1,3 @@
+<resources>
+    <dimen name="root_top_view_padding_top">25dp</dimen>
+</resources>

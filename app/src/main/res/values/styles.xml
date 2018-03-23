@@ -2,13 +2,20 @@
 
     <!-- Base application theme. -->
     <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item><!-- 标题栏背景色 -->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item><!-- 状态栏背景色 -->
         <item name="colorAccent">@color/colorAccent</item><!-- 控件选中颜色 -->
         <!-- 避免按钮上显示的英文字母强制转大写 -->
         <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!--  -->
+    <style name="real_root_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingTop">@dimen/root_top_view_padding_top</item>
     </style>
 
     <!-- 主页底部仿Tab栏的RadioButton样式 -->
@@ -20,6 +27,11 @@
         <item name="android:padding">5dp</item>
         <item name="android:gravity">center_horizontal|bottom</item>
         <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@drawable/checker_home_radio_text</item>
+    </style>
+
+    <style name="tv_hyperlink">
+        <item name="android:textColor">@color/blue</item>
     </style>
 
     <!--  -->

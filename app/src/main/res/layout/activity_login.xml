@@ -4,28 +4,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:background="#9ed5b3"
     android:paddingRight="@dimen/activity_horizontal_margin">
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/tiet_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="账号" />
+            android:hint="账号"
+            android:imeOptions="actionNext"
+            android:singleLine="true" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_pwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/tiet_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="密码" />
+            android:hint="密码"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:singleLine="true" />
     </android.support.design.widget.TextInputLayout>
 
     <Button

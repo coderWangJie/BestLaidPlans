@@ -11,5 +11,5 @@ import java.io.Serializable;
  *          Modified on 2018/3/13 by TODO
  */
 public class BaseVo implements Serializable {
-
+    private static final long serialVersionUID = -4150475941061201878L;
 }

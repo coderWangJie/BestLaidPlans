@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:clipChildren="false"
     android:orientation="vertical"
-    tools:context=".android.HomeActivity">
+    tools:context=".android.activities.HomeActivity">
 
     <FrameLayout
         android:id="@+id/frame_container"
@@ -25,15 +25,15 @@
         <RadioButton
             android:id="@+id/radio_frag1"
             style="@style/home_radio_button"
-            android:drawableTop="@drawable/checker_home_radio_one"
             android:checked="true"
-            android:text="新" />
+            android:drawableTop="@drawable/checker_home_radio_one"
+            android:text="@string/home_radio_index" />
 
         <RadioButton
             android:id="@+id/radio_frag2"
             style="@style/home_radio_button"
             android:drawableTop="@drawable/checker_home_radio_two"
-            android:text="年" />
+            android:text="@string/home_radio_" />
 
         <RadioButton
             android:id="@+id/radio_frag3"
@@ -45,12 +45,12 @@
             android:id="@+id/radio_frag4"
             style="@style/home_radio_button"
             android:drawableTop="@drawable/checker_home_radio_four"
-            android:text="快" />
+            android:text="@string/home_radio_history" />
 
         <RadioButton
             android:id="@+id/radio_frag5"
             style="@style/home_radio_button"
             android:drawableTop="@drawable/checker_home_radio_five"
-            android:text="乐" />
+            android:text="@string/home_radio_my" />
     </RadioGroup>
 </LinearLayout>

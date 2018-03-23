@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/img_splash"
     android:orientation="vertical"
-    tools:context="com.zhongsm.plan.android.SplashActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".android.activities.SplashActivity">
 
     <LinearLayout
         android:id="@+id/layout_delay"

@@ -1,11 +1,19 @@
 package com.zhongsm.android;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
+
+import com.zhongsm.util.LogUtil;
+
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * TODO
@@ -22,23 +30,42 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 获取页面Content布局文件ID
      * @return setContentView(int) 待置入页面的 layoutID
      */
-    protected abstract int loadContentLayoutID();
+    protected abstract int getContentLayoutId();
 
-    protected abstract void initViews();
+    protected abstract void doingOnCreat();
 
-    protected abstract void loadViewData();
+    protected abstract void doingOnResume();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e("LogWangJ", "activity****onCreate");
 
-        if (loadContentLayoutID() > 0) {
-            setContentView(loadContentLayoutID());
+        LogUtil.d(TAG, "Android OS version:" + Build.VERSION.SDK_INT);
+        getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
+            localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
         }
 
-        initViews();
-        loadViewData();
+        // android 5.0以上可定制状态栏
+//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            Window window = getWindow();
+//            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+//                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+//            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+//            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//            window.setStatusBarColor(Color.TRANSPARENT);
+//            window.setNavigationBarColor(Color.TRANSPARENT);
+//        }
+
+        if (getContentLayoutId() > 0) {
+            setContentView(getContentLayoutId());
+        }
+
+        doingOnCreat();
     }
 
     @Override
@@ -46,6 +73,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onResume();
         TAG = getClass().getSimpleName();
         Log.e("LogWangJ", "activity****onResume");
+        doingOnResume();
     }
 
     private Toast toast;
@@ -98,4 +126,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onRestart();
         Log.e("LogWangJ", "activity****onRestart");
     }
+
+
+    public Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("http://v.juhe.cn/todayOnhistory/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
+
 }
