@@ -8,7 +8,6 @@ import com.zhongsm.android.BaseActivity;
 import com.zhongsm.plan.R;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LoginActivity extends BaseActivity {
@@ -31,7 +30,6 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void doingOnCreat() {
-        ButterKnife.bind(this);
     }
 
     @Override

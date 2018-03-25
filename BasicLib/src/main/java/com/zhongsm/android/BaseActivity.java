@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.zhongsm.util.LogUtil;
 
+import butterknife.ButterKnife;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -63,6 +64,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         if (getContentLayoutId() > 0) {
             setContentView(getContentLayoutId());
+            ButterKnife.bind(this);
         }
 
         doingOnCreat();

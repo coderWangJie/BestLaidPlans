@@ -13,6 +13,7 @@ import com.zhongsm.util.LogUtil;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,37 +37,18 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void doingOnCreat() {
-        ButterKnife.bind(this);
         tvDelay.setText(delay + "s");
     }
 
     @Override
     protected void doingOnResume() {
         timer = new Timer();
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                delayHandler.sendEmptyMessage(0);
-//            }
-//        }, 1000, 1000);
-
-
-        TianqiService tinqi = retrofit.create(TianqiService.class);
-        tinqi.getTianqi().enqueue(new Callback<TianQiVo>() {
+        timer.schedule(new TimerTask() {
             @Override
-            public void onResponse(Call<TianQiVo> call, retrofit2.Response<TianQiVo> response) {
-
-                LogUtil.d(TAG, "哈哈11111");
-                LogUtil.d(TAG, response.body().getError_code() + "\n" + response.body().getReason() + response.body().getResult().size());
+            public void run() {
+                delayHandler.sendEmptyMessage(0);
             }
-
-            @Override
-            public void onFailure(Call<TianQiVo> call, Throwable t) {
-                LogUtil.d(TAG, "哈哈222222");
-                LogUtil.d(TAG, t.getMessage());
-                t.printStackTrace();
-            }
-        });
+        }, 1000, 1000);
     }
 
     @OnClick(R.id.layout_delay)
@@ -78,7 +60,7 @@ public class SplashActivity extends BaseActivity {
         finish();
     }
 
-    private Handler delayHandler = new Handler() {
+    Handler delayHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             if (delay == 0) {
@@ -99,40 +81,5 @@ public class SplashActivity extends BaseActivity {
     public void onBackPressed() {
         super.onBackPressed();
         timer.cancel();
-    }
-
-    public interface TianqiService {
-        @GET("queryEvent.php?date=3/20&key=" + Constant.JUHE_API_KEY)
-        Call<TianQiVo> getTianqi();
-    }
-
-    public class TianQiVo implements Serializable {
-        private String error_code;
-        private String reason;
-        private List result;
-
-        public String getError_code() {
-            return error_code;
-        }
-
-        public void setError_code(String error_code) {
-            this.error_code = error_code;
-        }
-
-        public String getReason() {
-            return reason;
-        }
-
-        public void setReason(String reason) {
-            this.reason = reason;
-        }
-
-        public List getResult() {
-            return result;
-        }
-
-        public void setResult(List result) {
-            this.result = result;
-        }
     }
 }

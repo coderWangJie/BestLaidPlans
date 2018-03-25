@@ -11,7 +11,11 @@ import android.app.Fragment;
  *          Modified on 2018/3/9 by TODO
  */
 public class BaseFragment extends Fragment {
+    protected static String TAG;
 
-
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        TAG = getClass().getSimpleName();
+    }
 }
