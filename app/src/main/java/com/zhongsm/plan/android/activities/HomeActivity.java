@@ -30,7 +30,7 @@ public class HomeActivity extends BaseActivity {
     }
 
     @Override
-    protected void doingOnCreat() {
+    protected void doingOnCreate() {
         fragmentManager = getFragmentManager();
 
         advancesFragment = new AdvancesFragment();
@@ -38,6 +38,9 @@ public class HomeActivity extends BaseActivity {
         test3Fragment = new Test3Fragment();
         personalFragment = new PersonalInfoFragment();
 
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.add(R.id.frame_container, advancesFragment, advancesFragment.getClass().getSimpleName());
+        transaction.commit();
         currentFragment = advancesFragment;
 
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
@@ -45,7 +48,6 @@ public class HomeActivity extends BaseActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 switch (i) {
                     case R.id.radio_frag1:
                         switchShowedFragment(R.id.frame_container, advancesFragment);
@@ -67,7 +69,6 @@ public class HomeActivity extends BaseActivity {
                         switchShowedFragment(R.id.frame_container, personalFragment);
                         break;
                 }
-                fragmentTransaction.commit();
             }
         });
     }
@@ -77,7 +78,7 @@ public class HomeActivity extends BaseActivity {
     }
 
     private void switchShowedFragment(int containerId, Fragment fragment) {
-        if (currentFragment == fragment) {
+        if (fragment == currentFragment) {
             return;
         }
 

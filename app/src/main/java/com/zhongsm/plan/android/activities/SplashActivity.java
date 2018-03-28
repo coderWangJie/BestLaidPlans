@@ -7,20 +7,12 @@ import android.widget.TextView;
 
 import com.zhongsm.android.BaseActivity;
 import com.zhongsm.plan.R;
-import com.zhongsm.plan.consts.Constant;
-import com.zhongsm.util.LogUtil;
 
-import java.io.Serializable;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.http.GET;
 
 public class SplashActivity extends BaseActivity {
     private int delay = 4;
@@ -36,7 +28,7 @@ public class SplashActivity extends BaseActivity {
     }
 
     @Override
-    protected void doingOnCreat() {
+    protected void doingOnCreate() {
         tvDelay.setText(delay + "s");
     }
 

@@ -3,7 +3,10 @@ package com.zhongsm.plan;
 import android.util.Log;
 
 import com.zhongsm.android.BaseApplication;
+import com.zhongsm.plan.consts.Constant;
 import com.zhongsm.util.LogUtil;
+
+import okhttp3.logging.HttpLoggingInterceptor;
 
 /**
  * TODO
@@ -19,6 +22,15 @@ public class MyApplication extends BaseApplication {
     public void onCreate() {
         super.onCreate();
 
-        LogUtil.setLogLevel(Log.DEBUG);
+        setAppLog();
+    }
+
+    private void setAppLog() {
+        if (Constant.APP_IS_DEBUG) {
+            // 运行日志
+            LogUtil.setRunLogLevel(Log.DEBUG); // 测试
+            // OkHttp3网络通信日志
+            LogUtil.setHttpLogLevel(HttpLoggingInterceptor.Level.BODY); // 测试
+        }
     }
 }

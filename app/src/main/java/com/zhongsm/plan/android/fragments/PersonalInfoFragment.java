@@ -2,11 +2,8 @@ package com.zhongsm.plan.android.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.zhongsm.android.BaseFragment;
 import com.zhongsm.plan.R;
@@ -32,13 +29,10 @@ public class PersonalInfoFragment extends BaseFragment {
         Log.e("LogWangJ", "fragment----onCreate");
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_personal_info, container, false);
-//        View view = inflater.inflate(R.layout.fragment_personal_info, null);
+    protected int getFragmnetLayoutId() {
         Log.e("LogWangJ", "fragment----onCreateView");
-        return view;
+        return R.layout.fragment_personal_info;
     }
 
     @Override

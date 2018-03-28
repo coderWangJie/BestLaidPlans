@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.zhongsm.util.LogUtil;
 
 import butterknife.ButterKnife;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -29,11 +31,12 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 获取页面Content布局文件ID
+     *
      * @return setContentView(int) 待置入页面的 layoutID
      */
     protected abstract int getContentLayoutId();
 
-    protected abstract void doingOnCreat();
+    protected abstract void doingOnCreate();
 
     protected abstract void doingOnResume();
 
@@ -67,7 +70,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             ButterKnife.bind(this);
         }
 
-        doingOnCreat();
+        doingOnCreate();
     }
 
     @Override
@@ -129,10 +132,14 @@ public abstract class BaseActivity extends AppCompatActivity {
         Log.e("LogWangJ", "activity****onRestart");
     }
 
+    private HttpLoggingInterceptor logging = new HttpLoggingInterceptor().setLevel(LogUtil.httpLogLevel);
+    private OkHttpClient client = new OkHttpClient.Builder()
+            .addInterceptor(logging)
+            .build();
 
     public Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("http://v.juhe.cn/todayOnhistory/")
             .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
             .build();
-
 }

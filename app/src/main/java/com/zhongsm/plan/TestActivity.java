@@ -10,7 +10,7 @@ public class TestActivity extends BaseActivity {
     }
 
     @Override
-    protected void doingOnCreat() {
+    protected void doingOnCreate() {
 
     }
 

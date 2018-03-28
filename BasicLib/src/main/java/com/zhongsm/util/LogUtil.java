@@ -2,6 +2,8 @@ package com.zhongsm.util;
 
 import android.util.Log;
 
+import okhttp3.logging.HttpLoggingInterceptor;
+
 /**
  * TODO
  *
@@ -14,39 +16,44 @@ public class LogUtil {
     /* 由于TAG要在静态方法中使用，只能在每个工具类中设置TAG值 */
     private static final String TAG = "LogUtil";
 
-    private static int mLogLevel;
+    private static int runLogLevel = Log.ASSERT + 1; // 默认不打印运行日志
+    public static HttpLoggingInterceptor.Level httpLogLevel = HttpLoggingInterceptor.Level.NONE;  // 默认不打印网络通信日志
 
-    public static void setLogLevel(int logLevel) {
-        Log.d(TAG, "setLogLevel: " + logLevel);
-        mLogLevel = logLevel;
+    public static void setHttpLogLevel(HttpLoggingInterceptor.Level httpLogLevel) {
+        LogUtil.httpLogLevel = httpLogLevel;
+    }
+
+    public static void setRunLogLevel(int runLogLevel) {
+        Log.d(TAG, "setRunLogLevel: " + runLogLevel);
+        LogUtil.runLogLevel = runLogLevel;
     }
 
     public static void v(String tag, String message) {
-        if (Log.VERBOSE >= mLogLevel) {
+        if (Log.VERBOSE >= runLogLevel) {
             Log.v(tag, message);
         }
     }
 
     public static void d(String tag, String message) {
-        if (Log.DEBUG >= mLogLevel) {
+        if (Log.DEBUG >= runLogLevel) {
             Log.d(tag, message);
         }
     }
 
     public static void i(String tag, String message) {
-        if (Log.INFO >= mLogLevel) {
+        if (Log.INFO >= runLogLevel) {
             Log.i(tag, message);
         }
     }
 
     public static void w(String tag, String message) {
-        if (Log.WARN >= mLogLevel) {
+        if (Log.WARN >= runLogLevel) {
             Log.w(tag, message);
         }
     }
 
     public static void e(String tag, String message) {
-        if (Log.ERROR >= mLogLevel) {
+        if (Log.ERROR >= runLogLevel) {
             Log.e(tag, message);
         }
     }

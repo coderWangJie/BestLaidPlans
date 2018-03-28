@@ -1,6 +1,7 @@
 package com.zhongsm.plan.android.fragments;
 
-        import com.zhongsm.android.BaseFragment;
+import com.zhongsm.android.BaseFragment;
+import com.zhongsm.plan.R;
 
 /**
  * TODO
@@ -11,4 +12,8 @@ package com.zhongsm.plan.android.fragments;
  *          Modified on 2018/3/9 by TODO
  */
 public class AdvancesFragment extends BaseFragment {
+    @Override
+    protected int getFragmnetLayoutId() {
+        return R.layout.fragment_advances;
+    }
 }

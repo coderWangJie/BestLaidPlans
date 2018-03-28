@@ -11,7 +11,7 @@ import java.util.List;
 public class EventList extends BaseVo {
     private String error_code;
     private String reason;
-    private List<EventVo> result;
+    private List<SimpleEventVo> result; //
 
     public String getError_code() {
         return error_code;
@@ -29,18 +29,18 @@ public class EventList extends BaseVo {
         this.reason = reason;
     }
 
-    public List<EventVo> getResult() {
+    public List<SimpleEventVo> getResult() {
         return result;
     }
 
-    public void setResult(List<EventVo> result) {
+    public void setResult(List<SimpleEventVo> result) {
         this.result = result;
     }
 
     /**
      * 内部类
      */
-    public static class EventVo {
+    public static class SimpleEventVo {
         private String day;
         private String date;
         private String title;
