@@ -14,6 +14,7 @@ import com.zhongsm.plan.R;
  *          Modified on 2018/3/9 by TODO
  */
 public class Test2Fragment extends BaseFragment {
+    private static final String TAG = PersonalInfoFragment.class.getSimpleName();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,7 @@ public class Test2Fragment extends BaseFragment {
     }
 
     @Override
-    protected int getFragmnetLayoutId() {
+    protected int getFragmentLayoutId() {
         return R.layout.fragment_test2;
     }
 

@@ -12,8 +12,10 @@ import com.zhongsm.plan.R;
  *          Modified on 2018/3/9 by TODO
  */
 public class AdvancesFragment extends BaseFragment {
+    private static final String TAG = PersonalInfoFragment.class.getSimpleName();
+
     @Override
-    protected int getFragmnetLayoutId() {
+    protected int getFragmentLayoutId() {
         return R.layout.fragment_advances;
     }
 }

@@ -1,6 +1,7 @@
 package com.zhongsm.android;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,15 +20,24 @@ import butterknife.ButterKnife;
  *          Modified on 2018/3/9 by TODO
  */
 public abstract class BaseFragment extends Fragment {
-    protected static String TAG;
 
-    protected abstract int getFragmnetLayoutId();
+    protected abstract int getFragmentLayoutId();
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view;
-        if (getFragmnetLayoutId() > 0) {
-            view = inflater.inflate(getFragmnetLayoutId(), container, false);
+        if (getFragmentLayoutId() > 0) {
+            view = inflater.inflate(getFragmentLayoutId(), container, false);
         } else {
             view = inflater.inflate(R.layout.error, container, false);
         }
@@ -38,6 +48,5 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        TAG = getClass().getSimpleName();
     }
 }

@@ -2,8 +2,11 @@ package com.zhongsm.plan.android.fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -37,12 +40,13 @@ import retrofit2.http.Query;
  *          Modified on 2018/3/9 by TODO
  */
 public class Test3Fragment extends BaseFragment {
+    private static final String TAG = PersonalInfoFragment.class.getSimpleName();
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
     @Override
-    protected int getFragmnetLayoutId() {
+    protected int getFragmentLayoutId() {
         return R.layout.fragment_test3;
     }
 
@@ -72,6 +76,7 @@ public class Test3Fragment extends BaseFragment {
         LogUtil.d(TAG, "EventList-size:" + result.size());
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
 
         EventListAdapter adapter = new EventListAdapter(getActivity(), result);
         adapter.setItemClickListener(new MyItemClickListener() {
@@ -84,6 +89,27 @@ public class Test3Fragment extends BaseFragment {
             }
         });
         recyclerView.setAdapter(adapter);
+    }
+
+    static class MyItemDecoration extends RecyclerView.ItemDecoration {
+        @Override
+        public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+
+        }
+
+        @Override
+        public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
+
+        }
+
+        @Override
+        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+
+        }
+
+        public MyItemDecoration() {
+
+        }
     }
 
     /**
