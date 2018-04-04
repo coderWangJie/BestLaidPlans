@@ -52,6 +52,7 @@ public class SplashActivity extends BaseActivity {
         finish();
     }
 
+    // TODO 看看避免内存泄漏的Handler这么个写法
     Handler delayHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {

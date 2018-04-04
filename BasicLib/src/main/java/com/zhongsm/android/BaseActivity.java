@@ -52,6 +52,10 @@ public abstract class BaseActivity extends AppCompatActivity {
             localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
         }
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+        }
+
         // android 5.0以上可定制状态栏
 //        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 //            Window window = getWindow();

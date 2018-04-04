@@ -2,8 +2,6 @@ package com.zhongsm.plan.android.fragments;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DividerItemDecoration;
@@ -91,25 +89,9 @@ public class Test3Fragment extends BaseFragment {
         recyclerView.setAdapter(adapter);
     }
 
-    static class MyItemDecoration extends RecyclerView.ItemDecoration {
-        @Override
-        public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
 
-        }
-
-        @Override
-        public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
-
-        }
-
-        @Override
-        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-
-        }
-
-        public MyItemDecoration() {
-
-        }
+    interface MyItemClickListener {
+        void onItemClick(int position);
     }
 
     /**
@@ -179,7 +161,4 @@ public class Test3Fragment extends BaseFragment {
         Call<EventList> getEventList(@Query("date") String date, @Query("key") String key);
     }
 
-    interface MyItemClickListener {
-        void onItemClick(int position);
-    }
 }
