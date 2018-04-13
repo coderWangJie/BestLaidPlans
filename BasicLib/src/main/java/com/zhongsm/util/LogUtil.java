@@ -5,12 +5,12 @@ import android.util.Log;
 import okhttp3.logging.HttpLoggingInterceptor;
 
 /**
- * TODO
+ * 日志打印工具类
  *
  * @author WangJ jie581825@yeah.net 2018/3/8
- * @version TODO
- *          Modified: TODO
- *          Modified on 2018/3/8 by TODO
+ * @version 1.0
+ *          Modified:
+ *          Modified on 2018/x/x by xxx
  */
 public class LogUtil {
     /* 由于TAG要在静态方法中使用，只能在每个工具类中设置TAG值 */

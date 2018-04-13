@@ -1,4 +1,4 @@
-package com.zhongsm.plan.android.entity.frag3;
+package com.zhongsm.plan.android.entity.historytoday;
 
 import com.zhongsm.android.BaseVo;
 

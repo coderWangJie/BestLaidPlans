@@ -16,7 +16,7 @@ import com.zhongsm.android.BaseFragment;
 import com.zhongsm.plan.R;
 import com.zhongsm.plan.android.activities.HomeActivity;
 import com.zhongsm.plan.android.activities.history.EventDetailActivity;
-import com.zhongsm.plan.android.entity.frag3.EventList;
+import com.zhongsm.plan.android.entity.historytoday.EventList;
 import com.zhongsm.plan.consts.Constant;
 import com.zhongsm.util.LogUtil;
 
@@ -37,7 +37,7 @@ import retrofit2.http.Query;
  *          Modified: TODO
  *          Modified on 2018/3/9 by TODO
  */
-public class Test3Fragment extends BaseFragment {
+public class HistoryTodayFragment extends BaseFragment {
     private static final String TAG = PersonalInfoFragment.class.getSimpleName();
 
     @BindView(R.id.recyclerView)
@@ -45,7 +45,7 @@ public class Test3Fragment extends BaseFragment {
 
     @Override
     protected int getFragmentLayoutId() {
-        return R.layout.fragment_test3;
+        return R.layout.fragment_history_today;
     }
 
     @Override

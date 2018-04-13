@@ -9,9 +9,9 @@ import android.widget.RadioGroup;
 import com.zhongsm.android.BaseActivity;
 import com.zhongsm.plan.R;
 import com.zhongsm.plan.android.fragments.AdvancesFragment;
+import com.zhongsm.plan.android.fragments.HistoryTodayFragment;
 import com.zhongsm.plan.android.fragments.PersonalInfoFragment;
 import com.zhongsm.plan.android.fragments.Test2Fragment;
-import com.zhongsm.plan.android.fragments.Test3Fragment;
 
 public class HomeActivity extends BaseActivity {
 
@@ -19,7 +19,7 @@ public class HomeActivity extends BaseActivity {
 
     private AdvancesFragment advancesFragment;
     private Test2Fragment test2Fragment;
-    private Test3Fragment test3Fragment;
+    private HistoryTodayFragment historyTodayFragment;
     private PersonalInfoFragment personalFragment;
 
     private Fragment currentFragment;
@@ -35,7 +35,7 @@ public class HomeActivity extends BaseActivity {
 
         advancesFragment = new AdvancesFragment();
         test2Fragment = new Test2Fragment();
-        test3Fragment = new Test3Fragment();
+        historyTodayFragment = new HistoryTodayFragment();
         personalFragment = new PersonalInfoFragment();
 
         FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -62,7 +62,7 @@ public class HomeActivity extends BaseActivity {
                         break;
 
                     case R.id.radio_frag4:
-                        switchShowedFragment(R.id.frame_container, test3Fragment);
+                        switchShowedFragment(R.id.frame_container, historyTodayFragment);
                         break;
 
                     case R.id.radio_frag5:

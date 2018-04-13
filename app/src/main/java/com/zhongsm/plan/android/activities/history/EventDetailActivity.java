@@ -4,7 +4,7 @@ import android.widget.TextView;
 
 import com.zhongsm.android.BaseActivity;
 import com.zhongsm.plan.R;
-import com.zhongsm.plan.android.entity.frag3.EventDetialVo;
+import com.zhongsm.plan.android.entity.historytoday.EventDetialVo;
 import com.zhongsm.plan.consts.Constant;
 
 import butterknife.BindView;
