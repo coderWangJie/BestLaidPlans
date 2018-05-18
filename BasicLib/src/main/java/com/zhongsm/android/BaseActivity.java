@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -47,7 +46,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("LogWangJ", "activity****onCreate");
 
         LogUtil.d(TAG, "Android OS version:" + Build.VERSION.SDK_INT);
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
@@ -90,7 +88,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         TAG = getClass().getSimpleName();
-        Log.e("LogWangJ", "activity****onResume");
         doingOnResume();
     }
 
@@ -118,31 +115,26 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.e("LogWangJ", "activity****onStart");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.e("LogWangJ", "activity****onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.e("LogWangJ", "activity****onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.e("LogWangJ", "activity****onDestroy");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.e("LogWangJ", "activity****onRestart");
     }
 
     private HttpLoggingInterceptor logging = new HttpLoggingInterceptor().setLevel(LogUtil.httpLogLevel);

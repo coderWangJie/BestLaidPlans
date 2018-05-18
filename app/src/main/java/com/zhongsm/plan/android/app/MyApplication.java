@@ -1,8 +1,8 @@
-package com.zhongsm.plan;
+package com.zhongsm.plan.android.app;
 
+import android.app.Application;
 import android.util.Log;
 
-import com.zhongsm.android.BaseApplication;
 import com.zhongsm.plan.consts.Constant;
 import com.zhongsm.util.LogUtil;
 
@@ -16,7 +16,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
  *          Modified: TODO
  *          Modified on 2018/3/8 by TODO
  */
-public class MyApplication extends BaseApplication {
+public class MyApplication extends Application {
 
     @Override
     public void onCreate() {

@@ -9,12 +9,13 @@ import android.content.Context;
 public class ViewUtil {
     /**
      * 获取sp、dp对应的px值
+     *
      * @param context 上下文
      * @param dpValue dp、sp的值
      * @return 转换后的px值
      */
-    public static float dip2px(Context context, float dpValue) {
+    public static int dip2px(Context context, float dpValue) {
         float scale = context.getResources().getDisplayMetrics().scaledDensity;
-        return dpValue * scale;
+        return (int) (dpValue * scale + 0.5f);
     }
 }

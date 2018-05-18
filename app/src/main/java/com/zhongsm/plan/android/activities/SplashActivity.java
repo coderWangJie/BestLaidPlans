@@ -15,7 +15,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 public class SplashActivity extends BaseActivity {
-    private int delay = 4;
+    private int delay = 3;
 
     @BindView(R.id.tv_delay)
     TextView tvDelay;

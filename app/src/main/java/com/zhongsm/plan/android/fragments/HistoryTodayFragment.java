@@ -115,7 +115,7 @@ public class HistoryTodayFragment extends BaseFragment {
 
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(context).inflate(R.layout.item_history_event, parent, false);
+            View view = LayoutInflater.from(context).inflate(R.layout.itm_historyevent, parent, false);
             return new MyViewHolder(view);
         }
 

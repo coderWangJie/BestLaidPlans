@@ -3,6 +3,7 @@ package com.zhongsm.plan.android.activities;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 
@@ -58,7 +59,8 @@ public class HomeActivity extends BaseActivity {
                         break;
 
                     case R.id.radio_frag3:
-//                        switchShowedFragment(R.id.frame_container, test2Fragment);
+                        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                        startActivity(intent);
                         break;
 
                     case R.id.radio_frag4:
@@ -97,7 +99,6 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        // TODO 保存想要存留的数据
         super.onSaveInstanceState(outState);
     }
 }
